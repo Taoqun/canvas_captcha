@@ -1,0 +1,27 @@
+html,body{
+    margin:0;
+    padding:0;
+}
+*{
+    box-sizing:border-box;
+}
+
+.wrap{
+    width:1000px;
+    margin:20px auto;
+}
+
+.code{
+    display:inline-block;
+    vertical-align:middle;
+    border: 1px solid #333;
+}
+#value{
+    display:block;
+    margin: 20px 0;
+    vertical-align:middle;
+    border: 1px solid #f00;
+    width:100px;
+    height:30px;
+    padding:0 10px;
+}
