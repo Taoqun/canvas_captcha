@@ -24,7 +24,8 @@ function captcha(canvas){
 captcha.prototype.getNumber = function(){
 
     this.cvs.clearRect(0,0,this.width,this.height)
-
+    this.str = ''
+    
     for( let i=1;i<5;i++ ){
         let str = parseInt( Math.random() * 10 )
         this.str += str
@@ -36,7 +37,8 @@ captcha.prototype.getNumber = function(){
 captcha.prototype.getLetter = function(){
 
     this.cvs.clearRect(0,0,this.width,this.height)
-    
+    this.str = ''
+
     for( let i=1;i<5;i++ ){
         let str = String.fromCharCode(  65 + parseInt(Math.random() * (91-65)) ) 
         this.str += str
@@ -47,7 +49,8 @@ captcha.prototype.getLetter = function(){
 captcha.prototype.NumberOrLetter = function(){
 
     this.cvs.clearRect(0,0,this.width,this.height)
-    
+    this.str = ''
+
     for( let i=1;i<5;i++ ){
         let a = parseInt( Math.random() * 10 )
         let str = ''
@@ -61,6 +64,7 @@ captcha.prototype.NumberOrLetter = function(){
 captcha.prototype.hanzi = function(){
 
     this.cvs.clearRect(0,0,this.width,this.height)
+    this.str = ''
 
     for( let i=1;i<5;i++ ){
         let str = eval('"\\u' + (Math.round(Math.random() * 20901) + 19968).toString(16)+'"')
@@ -73,6 +77,7 @@ captcha.prototype.setCode = function(str){
 
     if(typeof str === 'string' || typeof str === 'number'  ){
         str += ''
+        this.str = ''
         this.str = str
         this.x = this.width / (str.length+1)
         for( let i=1; i < str.length +1; i++ ){
